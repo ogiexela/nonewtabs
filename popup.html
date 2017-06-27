@@ -1,0 +1,142 @@
+<html>
+<head>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      min-width: 300;
+      max-width: 300;
+      height: 590;
+      max-height: 600;
+      overflow-y: hidden;
+      padding: 0;
+      margin: 0;
+    }
+    header {
+      display: flex;
+      flex-direction: column;
+      margin-left: 8;
+      margin-right: 8;
+    }
+    section {
+    }
+    footer {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      bottom: 0;
+      margin-left: 8;
+      margin-right: 8;
+    }
+    h1 {
+      align-self: center
+    }
+    hr {
+      width: 100%
+    }
+    #historyDisplayContainer {
+      height: 340;
+      width: 100%;
+      padding-bottom: 20;
+      overflow: hidden;
+    }
+    #historyDisplay {
+      height: 100%;
+      width: 100%;
+      overflow: auto;
+      padding-left: 0;
+      padding-top: 10;
+      padding-bottom: 10;
+    }
+    #historyDisplay::-webkit-scrollbar {
+    }
+    .historyItemContainer {
+      width: 100%;
+      overflow: hidden;
+      padding-top: 5;
+      padding-bottom: 5;
+    }
+    .historyItemContent {
+      width: 100%;
+      white-space: nowrap;
+      overflow: auto;
+      padding-left: 5;
+    }
+    .historyItemContent::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+      background: transparent; /* make scrollbar transparent */
+    }
+    #historyDisplay .historyItemContainer:nth-child(even) {
+      background-color: #F2F3F4;
+    }
+    #historyDisplay .historyItemContainer:nth-child(odd) {
+      background-color: #D5DBDB;
+    }
+    #clearHistoryButton {
+      margin-bottom: 10;
+    }
+    .extensionOptions {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+    }
+    .historyItemControls {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 5
+    }
+  </style>
+  <script src="popup.js"></script>
+</head>
+<body>
+  <header>
+    <h1>New Tabs History</h1>
+    <button id="clearHistoryButton">Clear History</button>
+    <div class="extensionOptions">
+      Allow all <input id="allowAll" type="checkbox" />
+    </div>
+    <div class="extensionOptions">
+      Allow blank tabs <input id="allowBlankTabs" type="checkbox" />
+    </div>
+    <div class="extensionOptions">
+      Allow history <input id="allowHistory" type="checkbox" />
+    </div>
+    <hr>
+  </header>
+  <section>
+    <div id="historyDisplayContainer">
+      <div id="historyDisplay"></div>
+    </div>
+  </section>
+  <footer>
+    <hr>
+    <div class="author">
+      Source at
+      <a id="sourceLink" target="_blank" href="https://github.com/ogiexela/nonewtabs"
+        title="https://github.com/ogiexela/nonewtabs">
+        Github</a>.
+    </div>
+    <div class="iconCredits">
+      Icons made by
+      <a
+        href="http://www.flaticon.com/authors/madebyoliver"
+        title="Madebyoliver">
+        Madebyoliver
+      </a>
+      from
+      <a
+        href="http://www.flaticon.com"
+        title="Flaticon">www.flaticon.com
+      </a>
+      is licensed by
+      <a
+        href="http://creativecommons.org/licenses/by/3.0/"
+        title="Creative Commons BY 3.0"
+        target="_blank">
+        CC 3.0 BY
+      </a>
+    </div>
+  </footer>
+</body>
+</html>
